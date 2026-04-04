@@ -191,10 +191,10 @@ Schedule ETL using:
 ---
 
 ## Dashboard Preview
-![Dashboard](./screenshot.png)
+![Dashboard](./Screenshot.png)
 
 ---
 
 ## Live Demo
-https://your-app.streamlit.app
+(https://weather-data-pipeline-lprq4c7srsehxmcskduiqd.streamlit.app/)
 
