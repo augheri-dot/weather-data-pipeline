@@ -2,7 +2,7 @@ name: Auto Update Weather Data
 
 on:
   schedule:
-    - cron: "0 * * * *" # Runs every hour
+    - cron: "0 * * * *"  
   workflow_dispatch:
 
 jobs:
@@ -16,28 +16,19 @@ jobs:
       DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
       DB_PORT: ${{ secrets.DB_PORT }}
 
-      FORECAST_DAYS: "2"
-      TIMEZONE: "Asia/Jakarta"
-      BATCH_SIZE: "25"
-      API_TIMEOUT: "20"
-      API_MAX_RETRIES: "3"
-      API_BASE_DELAY: "3"
-      DB_MAX_RETRIES: "4"
-      DB_BASE_DELAY: "5"
-      DEBUG_MODE: "false"
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - name: Checkout repo
+        uses: actions/checkout@v3
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - name: Setup Python
+        uses: actions/setup-python@v4
         with:
           python-version: "3.12"
-          cache: "pip"
 
       - name: Install dependencies
         run: pip install -r requirements.txt
 
+      - name: Run ETL Script
+        run: python weather_etl.py
       - name: Run weather ETL
         run: python weather_etl.py
