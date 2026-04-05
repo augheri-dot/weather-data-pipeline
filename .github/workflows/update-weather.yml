@@ -2,7 +2,7 @@ name: Auto Update Weather Data
 
 on:
   schedule:
-    - cron: "0 * * * *"  
+    - cron: "0 * * * *"   # every 1 hour
   workflow_dispatch:
 
 jobs:
@@ -29,6 +29,4 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Run ETL Script
-        run: python weather_etl.py
-      - name: Run weather ETL
         run: python weather_etl.py
