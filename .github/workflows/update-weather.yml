@@ -16,14 +16,14 @@ jobs:
       DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
       DB_PORT: ${{ secrets.DB_PORT }}
 
-      FORECAST_DAYS: "3"
+      FORECAST_DAYS: "2"
       TIMEZONE: "Asia/Jakarta"
-      BATCH_SIZE: "100"
+      BATCH_SIZE: "25"
       API_TIMEOUT: "20"
       API_MAX_RETRIES: "3"
       API_BASE_DELAY: "3"
-      DB_MAX_RETRIES: "3"
-      DB_BASE_DELAY: "3"
+      DB_MAX_RETRIES: "4"
+      DB_BASE_DELAY: "5"
       DEBUG_MODE: "false"
 
     steps:
